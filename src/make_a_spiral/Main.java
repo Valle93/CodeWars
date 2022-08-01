@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 class Main{
 
+    public static final String ANSI_RED = "\u001B[31m";
+
+    public static final String ANSI_YELLOW = "\u001B[33m";
+
+    public static final String ANSI_RESET = "\u001B[37m";
+
     public static void main(String[] args) {
 
         int[][] spiral = new int[][]{
@@ -27,7 +33,7 @@ class Main{
         System.out.println();
         System.out.println();
 
-        int[][] spiraled2 = spiralize(8);
+        int[][] spiraled2 = spiralize(19);
 
         printGrid(spiraled2);
 
@@ -155,7 +161,14 @@ class Main{
 
             for (int j = 0; j < array[0].length; j++) {
 
-                System.out.print(array[i][j]);
+                if (array[i][j] == 0){
+                    System.out.print(ANSI_RED + array[i][j] + " ");
+                }
+                else{
+                    System.out.print(ANSI_YELLOW + array[i][j] + " ");
+                }
+
+
             }
             System.out.println();
         }
